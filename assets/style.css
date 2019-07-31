@@ -1,11 +1,24 @@
 .container {
     width: 960px;
-    height: 350px;
+    height: 775px;
     margin: 0 auto;
     padding: 5px 40px 20px 40px;
     background: black;
     border: 2px solid white;
     color: #ffe700;
+}
+
+.btn {
+    text-align: center;
+    margin: 115px 0px 0px 335px;
+}
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 200px;
+    justify-content: flex-start;
 }
 
 body {
