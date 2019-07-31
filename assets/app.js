@@ -137,7 +137,7 @@ nextQ : function () {
     let resultId;
     let currentAnswer = Object.values(myQuestions.rightAnswer)[myQuestions.currentSet];
     
-    if($(this).on("click") === currentAnswer){
+    if($(this).on("click") === currentAnswer) {
       
       myQuestions.correctAnswer++;
       clearInterval(myQuestions.timerId);
@@ -161,8 +161,7 @@ nextQ : function () {
     
     $("#options").remove();
     $("#result").remove();
-    
-    // begin next question
+   
     myQuestions.nextQ();
      
   }
