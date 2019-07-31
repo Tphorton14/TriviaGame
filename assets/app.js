@@ -117,7 +117,7 @@ nextQ : function () {
       
       
       $("#result")
-        .html("Thanks For Playing!" +
+        .text("Thanks For Playing!" +
         '<p>Correct: '+ myQuestions.correctAnswer +'</p>'+
         '<p>Incorrect: '+ myQuestions.incorrectAnswer +'</p>'+
         '<p>Unaswered: '+ myQuestions.unanswered +'</p>'+
