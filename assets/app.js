@@ -75,7 +75,6 @@ nextQ : function () {
 
     myQuestions.time = 20;
     $("#clock").text(myQuestions.time);
-    $("#clock").removeClass("last-seconds");
     $("#clock").text(myQuestions.time);
     
     if(!myQuestions.timeOn){
