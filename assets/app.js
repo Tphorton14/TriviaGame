@@ -25,7 +25,7 @@ let myQuestions = {
     timeOn: false,
     timerId: "",
 
-    questions : {
+    questions: {
         q1: "Name the largest freshwater lake in the world?",
         q2: "What is the diameter of Earth?", 
         q3: "Which garden is considered to be among the Seven Wonders of the Ancient World?",
@@ -36,7 +36,7 @@ let myQuestions = {
         q8: "What is my favorite number?",
     },
 
-    choice : {
+    choice: {
         q1: ["Lake Lanier", "Lake Taho", "Lake Superior", "Lake Okeechobee"],
         q2: ["8,000 Miles", "11,275 Miles", "6,898 Miles", "11,111 Miles"],
         q3: ["Spring Gardens Keukenhof", "Gardens of Versailles", "The Hanging Gardens of Babylon", "Royal Botanic Gardens at Kew"],
@@ -47,15 +47,15 @@ let myQuestions = {
         q8: ["8", "7", "24", "16"]
     },
 
-    rightAnswer : {
-        q1: "Lake Superior",
-        q2: "8,000 Miles",
-        q3: "The Hanging Gardens of Babylon",
-        q4: "India",
-        q5: "Boston, Atlanta, Milwaukee",
-        q6: "Wade Phillips",
-        q7: "17",
-        q8: "8"
+    rightAnswer: {
+        q1: 'Lake Superior',
+        q2: '8,000 Miles',
+        q3: 'The Hanging Gardens of Babylon',
+        q4: 'India',
+        q5: 'Boston, Atlanta, Milwaukee',
+        q6: 'Wade Phillips',
+        q7: '17',
+        q8: '8',
     },
 
 
@@ -101,7 +101,7 @@ nextQ : function () {
       $("#clock").text(myQuestions.time);
       myQuestions.time--;
         if(myQuestions.time === 4){
-          $("#clock").addClass('last-seconds');
+        
         }
     }
     
@@ -110,7 +110,7 @@ nextQ : function () {
       myQuestions.result = false;
       clearInterval(myQuestions.timerId);
       resultId = setTimeout(myQuestions.guessResult, 1000);
-      $("#result").html("Out of time! The answer was "+ Object.values(myQuestions.rightAnswer)[myQuestions.currentSet]);
+      $("#result").text("Out of time! The answer was "+ Object.values(myQuestions.rightAnswer)[myQuestions.currentSet]);
     }
    
     else if(myQuestions.currentSet === Object.keys(myQuestions.questions).length){
@@ -124,17 +124,17 @@ nextQ : function () {
         '<p>Please play again!</p>');
       
       
-      $('#game').hide();
+      $("#game").hide();
       
       
-      $('#start').show();
+      $("#start").show();
     }
     
   },
   
   guessChecker : function() {
     
-    let resultId;
+    var resultId;
     let currentAnswer = Object.values(myQuestions.rightAnswer)[myQuestions.currentSet];
     
     if($(this).on("click") === currentAnswer) {
@@ -142,7 +142,7 @@ nextQ : function () {
       myQuestions.correctAnswer++;
       clearInterval(myQuestions.timerId);
       resultId = setTimeout(myQuestions.guessResult, 1000);
-      $("#result").text("Correct!");
+      $("#result").html("<p>Correct!</p>");
     }
     else{
      
@@ -150,7 +150,7 @@ nextQ : function () {
       myQuestions.incorrectAnswer++;
       clearInterval(myQuestions.timerId);
       resultId = setTimeout(myQuestions.guessResult, 1000);
-      $("#result").text("Wrong! The Correct Answer is: "+ currentAnswer);
+      $("#result").text("Wrong! The Correct Answer is: " + currentAnswer);
     }
     
   },
