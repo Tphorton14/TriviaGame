@@ -1,6 +1,6 @@
 
 
-
+// click events
 $(document).ready(function() {
   
     $("#time-remain").hide();
@@ -8,11 +8,6 @@ $(document).ready(function() {
     $(document).on("click", '#options', myQuestions.guessChecker);
     
   });
-
-
-
-
-
 
 
 let myQuestions = {
@@ -59,7 +54,7 @@ let myQuestions = {
     },
 
 
-
+// function that "Starts" game = works
 beginGame : function() {
 
     clearInterval(myQuestions.timerId);
@@ -71,6 +66,7 @@ beginGame : function() {
     myQuestions.nextQ();
 },
 
+// 
 nextQ : function () {
 
     myQuestions.time = 20;
